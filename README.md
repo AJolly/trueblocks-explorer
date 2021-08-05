@@ -41,6 +41,18 @@ yarn develop
 
 Now, the application should be running at `localhost:1234`.
 
+If yarn complains about not being able to find the directory, you may need an updated version of yarn.
+Try:
+```shell
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt-get update && sudo apt-get install yarn
+sudo apt-get install --no-install-recommends yarn
+
+yarn --version
+```
+
+
 ## NPM Scripts
 
 - `compile | compile:ui | compile:electron` compile TypeScript into JavaScript, usually before packing new Electron bundle
